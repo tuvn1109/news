@@ -13,7 +13,10 @@
         <!--begin: Datatable-->
         <!--begin::Form-->
 		<?php
+
 		if ($data) {
+
+
 			?>
             <div class="row">
                 <div class="col-xl-2"></div>
@@ -58,41 +61,91 @@
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label class="col-lg-2 col-form-label">Upload File</label>
-                                <div class="col-lg-6">
-                                    <div class="uppy" id="kt_uppy_5">
-                                        <div class="uppy-wrapper"></div>
-                                        <div class="uppy-list"></div>
-                                        <div class="uppy-status"></div>
-                                        <div class="uppy-informer uppy-informer-min"></div>
-                                    </div>
-                                    <span class="form-text text-muted">Max file size is 1MB and max number of files is 5</span>
-                                </div>
-                            </div>
-
-
-                            <div class="form-group row">
-                                <label class="col-form-label col-lg-3 col-sm-12 text-lg-right">Multiple File
-                                    Upload</label>
-                                <div class="col-lg-4 col-md-9 col-sm-12">
-                                    <div class="dropzone dropzone-default dropzone-primary" id="kt_dropzone_2">
-                                        <div class="dropzone-msg dz-message needsclick">
-                                            <h3 class="dropzone-msg-title">Drop files here or click to upload.</h3>
-                                            <span class="dropzone-msg-desc">Upload up to 10 files</span>
+                                <label class="col-lg-2 col-form-label ">Upload Files:</label>
+                                <div class="col-lg-10">
+                                    <div class="dropzone dropzone-multi" id="kt_dropzone_4">
+                                        <div class="dropzone-panel mb-lg-0 mb-2">
+                                            <a class="dropzone-select btn btn-light-primary font-weight-bold btn-sm">Attach
+                                                files</a>
+                                            <a class="dropzone-upload btn btn-light-primary font-weight-bold btn-sm" style="display: none;">Upload All</a>
+                                            <a class="dropzone-remove-all btn btn-light-primary font-weight-bold btn-sm"
+                                                style="display: none;" >Remove All</a>
                                         </div>
+                                        <div class="dropzone-items">
+											<?php
+											if (empty($files)) {
+												?>
+                                                <div class="dropzone-item" style="display: none">
+                                                    <div class="dropzone-file">
+                                                        <div class="dropzone-filename" title="">
+                                                            <span data-dz-name=""></span>
+                                                            <strong>(<span
+                                                                        data-dz-size=""> Kb</span>)</strong>
+                                                        </div>
+                                                        <div class="dropzone-error" data-dz-errormessage=""></div>
+                                                    </div>
+                                                    <div class="dropzone-toolbar">
+																			<span class="dropzone-start">
+																			</span>
+                                                        <span class="dropzone-cancel" data-dz-remove=""
+                                                              style="display: none;">
+																				<i class="flaticon2-cross"></i>
+																			</span>
+                                                        <span class="dropzone-delete" data-dz-remove="">
+																				<i class="flaticon2-cross"></i>
+																			</span>
+                                                    </div>
+
+                                                </div>
+												<?php
+											}
+											?>
+											<?php
+											foreach ($files as $files1):
+												$path = (WRITEPATH . 'uploads\user' . $data['Id'] . '/' . $files1 . '');
+												$a = get_file_info($path);
+												?>
+                                                <div class="dropzone-item">
+                                                    <div class="dropzone-file">
+                                                        <div class="dropzone-filename" title="<?= $files1 ?>">
+                                                            <span data-dz-name=""><?= $files1 ?></span>
+                                                            <strong>(<span
+                                                                        data-dz-size=""><?= number_format($a['size'] / 1000, 2) ?> Kb</span>)</strong>
+                                                        </div>
+                                                        <div class="dropzone-error" data-dz-errormessage=""></div>
+                                                    </div>
+                                                    <div class="dropzone-toolbar">
+																			<span class="dropzone-start">
+																			</span>
+                                                        <span class="dropzone-cancel" data-dz-remove=""
+                                                              style="display: none;">
+																				<i class="flaticon2-cross"></i>
+																			</span>
+                                                        <span class="dropzone-delete" data-dz-remove="">
+																				<i class="flaticon2-cross"
+                                                                                   onclick="deleteFile('<?= $files1 ?>','<?= $data['Id'] ?>')"></i>
+																			</span>
+                                                    </div>
+
+                                                </div>
+											<?php
+											endforeach;
+											?>
+
+                                        </div>
+
+
+                                        <span class="form-text text-muted">Max file size is 1MB and max number of files is 5.</span>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-
-
-                        <div class="card-footer">
-                            <div class="row align-center">
-                                <div class="col-10 ">
-                                    <button type="submit" class="btn btn-light-primary mr-2">Submit</button>
+                            <div class="card-footer">
+                                <div class="row align-center">
+                                    <div class="col-10 ">
+                                        <button type="submit" class="btn btn-light-primary mr-2">Submit</button>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
                     </form>
                 </div>
                 <div class="col-xl-2"></div>

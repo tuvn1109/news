@@ -54,16 +54,28 @@ class Users extends BaseController
 		$uri = current_url(true);
 		$id = $uri->getSegment(3);
 		$user = $model->find($id);
+		$helper = helper('filesystem');
+		$files = directory_map(WRITEPATH . 'uploads/user' . $id . '/');
 		$user['id'] = $id;
 		$data['temp'] = 'edit';
 		$data['data'] = $user;
+		$data['files'] = $files;
 		echo view('layout', $data);
 
 	}
 
-	public function files(){
-
+	public function deleteFile()
+	{
+		$helper = helper('filesystem');
+		$fileName = $this->request->getPost('filename');
+		$id = $this->request->getPost('id');
+		$path = (WRITEPATH . 'uploads\user' . $id . '/' . $fileName . '');
+		$DEL = unlink($path);
+		if ($DEL) {
+			echo json_encode(1);
+		}
 	}
+
 	public function submitedit()
 	{
 		$model = new UsersModel();
@@ -87,13 +99,15 @@ class Users extends BaseController
 
 		$files = $this->request->getFiles();
 
-
 		if ($files) {
-			foreach ($files['filesnew'] as $img) {
+			foreach ($files['files'] as $img) {
 
 				if ($img->isValid() && !$img->hasMoved()) {
-					$newName = $img->getRandomName();
-					//$img->move(WRITEPATH . 'uploads', $newName);
+					//$newName = $img->getRandomName();
+					if (!is_dir('uploads/user' . $id)) {
+						mkdir('./uploads/user' . $id, 0777, TRUE);
+					}
+					$img->move(WRITEPATH . 'uploads/user' . $id);
 
 				}
 

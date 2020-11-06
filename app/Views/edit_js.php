@@ -1,8 +1,105 @@
 <script src="/assets/plugins/custom/uppy/uppy.bundle.js"></script>
 <script>
+    var arrFiles = [];
+
+    var KTDropzoneDemo = function () {
+        // Private functions
+        var demo2 = function () {
+            // set the dropzone container id
+            var id = '#kt_dropzone_4';
+            // set the preview element template
+            var previewNode = $(id + " .dropzone-item");
+            previewNode.id = "";
+            var previewTemplate = previewNode.parent('.dropzone-items').html();
+            //  previewNode.remove();
+
+            var myDropzone4 = new Dropzone(id, { // Make the whole body a dropzone
+                url: "https://keenthemes.com/scripts/void.php", // Set the url for your upload script location
+                parallelUploads: 20,
+                previewTemplate: previewTemplate,
+                maxFilesize: 1, // Max filesize in MB
+                autoQueue: false, // Make sure the files aren't queued until manually added
+                previewsContainer: id + " .dropzone-items", // Define the container to display the previews
+                clickable: id + " .dropzone-select" // Define the element that should be used as click trigger to select files.
+            });
+
+            myDropzone4.on("addedfile", function (file) {
+                // Hookup the start button
+                file.previewElement.querySelector(id + " .dropzone-start").onclick = function () {
+                    myDropzone4.enqueueFile(file);
+                };
+                $(document).find(id + ' .dropzone-item').css('display', '');
+                $(id + " .dropzone-upload, " + id + " .dropzone-remove-all").css('display', 'inline-block');
+                arrFiles.push(file);
+            });
+            // Update the total progress bar
+            myDropzone4.on("totaluploadprogress", function (progress) {
+                $(this).find(id + " .progress-bar").css('width', progress + "%");
+                console.log(15);
+              //  $(".dropzone-items .dropzone-item").removeClass("dropzone-item");
+            });
+
+            myDropzone4.on("sending", function (file) {
+                // Show the total progress bar when upload starts
+                $(id + " .progress-bar").css('opacity', '1');
+                // And disable the start button
+                file.previewElement.querySelector(id + " .dropzone-start").setAttribute("disabled", "disabled");
+            });
+
+            // Hide the total progress bar when nothing's uploading anymore
+            myDropzone4.on("complete", function (progress) {
+                var thisProgressBar = id + " .dz-complete";
+                setTimeout(function () {
+                    $(thisProgressBar + " .progress-bar, " + thisProgressBar + " .progress, " + thisProgressBar + " .dropzone-start").css('opacity', '0');
+                }, 300)
+
+            });
+
+            // Setup the buttons for all transfers
+            document.querySelector(id + " .dropzone-upload").onclick = function () {
+                myDropzone4.enqueueFiles(myDropzone4.getFilesWithStatus(Dropzone.ADDED));
+            };
+
+            // Setup the button for remove all files
+            document.querySelector(id + " .dropzone-remove-all").onclick = function () {
+                $(id + " .dropzone-upload, " + id + " .dropzone-remove-all").css('display', 'none');
+                myDropzone4.removeAllFiles(true);
+                console.log('removeALL');
+            };
+
+            // On all files completed upload
+            myDropzone4.on("queuecomplete", function (progress) {
+                $(id + " .dropzone-upload").css('display', 'none');
+            });
+
+            // On all files removed
+            myDropzone4.on("removedfile", function (file) {
+                if (myDropzone4.files.length < 1) {
+                    $(id + " .dropzone-upload, " + id + " .dropzone-remove-all").css('display', 'none');
+                    //arrFiles.push(file);
+                }
+            });
+        }
+        return {
+            // public functions
+            init: function () {
+                demo2();
+            }
+        };
+    }();
+
+    KTUtil.ready(function () {
+        KTDropzoneDemo.init();
+    });
+
+
     $('#form_edit_user').on('submit', function (e) {
         e.preventDefault();
         var formData = new FormData($(this)[0]);
+        var files = $('#files').val();
+        $.each(arrFiles, function (keys, values) {
+            formData.append('files[]', values);
+        });
         $.ajax({
             type: 'post',
             url: '/Users/submitedit',
@@ -21,143 +118,22 @@
             }
         }); //End Ajax
     }); //End submit
-
-
-    "use strict";
-    // Class definition
-    var KTUppy = function () {
-        const Tus = Uppy.Tus;
-        const ProgressBar = Uppy.ProgressBar;
-        const StatusBar = Uppy.StatusBar;
-        const FileInput = Uppy.FileInput;
-        const Informer = Uppy.Informer;
-
-        // to get uppy companions working, please refer to the official documentation here: https://uppy.io/docs/companion/
-        const Dashboard = Uppy.Dashboard;
-        const Dropbox = Uppy.Dropbox;
-        const GoogleDrive = Uppy.GoogleDrive;
-        const Instagram = Uppy.Instagram;
-        const Webcam = Uppy.Webcam;
-
-        // Private functions
-
-        var initUppy5 = function () {
-            // Uppy variables
-            // For more info refer: https://uppy.io/
-            var elemId = 'kt_uppy_5';
-            var id = '#' + elemId;
-            var $statusBar = $(id + ' .uppy-status');
-            var $uploadedList = $(id + ' .uppy-list');
-            var timeout;
-
-            var uppyMin = Uppy.Core({
-                debug: true,
-                autoProceed: true,
-                showProgressDetails: true,
-                restrictions: {
-                    maxFileSize: 10000000, // 1mb
-                    maxNumberOfFiles: 5,
-                    minNumberOfFiles: 1
+    function deleteFile(filename, id) {
+        $.ajax({
+            url: "/Users/deleteFile",
+            dataType: "json",
+            data: {filename: filename, id: id},
+            type: "POST",
+            success: function (data) {
+                if (data == 1) {
+                    window.setTimeout(function () {
+                        location.reload()
+                    }, 1000)
                 }
-            });
-
-            uppyMin.use(FileInput, {target: id + ' .uppy-wrapper', pretty: false});
-            uppyMin.use(Informer, {target: id + ' .uppy-informer'});
-
-            // demo file upload server
-            uppyMin.use(Tus, {endpoint: 'http://news.com/user/files/'});
-            uppyMin.use(StatusBar, {
-                target: id + ' .uppy-status',
-                hideUploadButton: true,
-                hideAfterFinish: false
-            });
-
-            $(id + ' .uppy-FileInput-input').addClass('uppy-input-control').attr('id', elemId + '_input_control');
-            $(id + ' .uppy-FileInput-container').append('<label class="uppy-input-label btn btn-light-primary btn-sm btn-bold" for="' + (elemId + '_input_control') + '">Chọn tệp</label>');
-
-            var $fileLabel = $(id + ' .uppy-input-label');
-
-            uppyMin.on('upload', function (data) {
-                $fileLabel.text("Uploading...");
-                $statusBar.addClass('uppy-status-ongoing');
-                $statusBar.removeClass('uppy-status-hidden');
-                clearTimeout(timeout);
-            });
-
-            uppyMin.on('complete', function (file) {
-                $.each(file.successful, function (index, value) {
-                    var sizeLabel = "bytes";
-                    var filesize = value.size;
-                    if (filesize > 1024) {
-                        filesize = filesize / 1024;
-                        sizeLabel = "kb";
-
-                        if (filesize > 1024) {
-                            filesize = filesize / 1024;
-                            sizeLabel = "MB";
-                        }
-                    }
-                    var uploadListHtml = '<div class="uppy-list-item" data-id="' + value.id + '"><div class="uppy-list-label">' + value.name + ' (' + Math.round(filesize, 2) + ' ' + sizeLabel + ')</div><span class="uppy-list-remove" data-id="' + value.id + '"><i class="flaticon2-cancel-music"></i></span></div>';
-                    $uploadedList.append(uploadListHtml);
-                });
-
-                $fileLabel.text("Chọn tệp");
-
-                $statusBar.addClass('uppy-status-hidden');
-                $statusBar.removeClass('uppy-status-ongoing');
-            });
-
-            $(document).on('click', id + ' .uppy-list .uppy-list-remove', function () {
-                var itemId = $(this).attr('data-id');
-                uppyMin.removeFile(itemId);
-                $(id + ' .uppy-list-item[data-id="' + itemId + '"').remove();
-            });
-        }
-        return {
-            // public functions
-            init: function () {
-                initUppy5();
+            },
+            error: function () {
             }
-        };
-    }();
+        });
 
-    KTUtil.ready(function () {
-        KTUppy.init();
-    });
-
-
-    var KTDropzoneDemo = function () {
-        // Private functions
-        var demo1 = function () {
-            // multiple file upload
-            $('#kt_dropzone_2').dropzone({
-                url: "http://news.com/", // Set the url for your upload script location
-                paramName: "filesnew", // The name that will be used to transfer the file
-                maxFiles: 10,
-                maxFilesize: 10, // MB
-                addRemoveLinks: true,
-                accept: function (file, done) {
-                    if (file.name == "justinbieber.jpg") {
-                        done("Naha, you don't.");
-                    } else {
-                        done();
-                    }
-                }
-            });
-
-        }
-
-        return {
-            // public functions
-            init: function () {
-                demo1();
-            }
-        };
-    }();
-
-    KTUtil.ready(function () {
-        KTDropzoneDemo.init();
-    });
-
-
+    }
 </script>
