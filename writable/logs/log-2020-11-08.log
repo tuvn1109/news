@@ -1,0 +1,171 @@
+CRITICAL - 2020-11-08 19:37:15 --> Invalid file: home_js.php
+#0 D:\WORKS\pro\news\vendor\codeigniter4\framework\system\View\View.php(228): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('home_js.php')
+#1 D:\WORKS\pro\news\vendor\codeigniter4\framework\system\Common.php(1119): CodeIgniter\View\View->render('home_js', Array, true)
+#2 D:\WORKS\pro\news\app\Views\layout.php(3501): view('home_js', Array)
+#3 D:\WORKS\pro\news\vendor\codeigniter4\framework\system\View\View.php(246): include('D:\\WORKS\\pro\\ne...')
+#4 D:\WORKS\pro\news\vendor\codeigniter4\framework\system\Common.php(1119): CodeIgniter\View\View->render('layout', Array, true)
+#5 D:\WORKS\pro\news\app\Controllers\Home.php(9): view('layout', Array)
+#6 D:\WORKS\pro\news\vendor\codeigniter4\framework\system\CodeIgniter.php(918): App\Controllers\Home->index()
+#7 D:\WORKS\pro\news\vendor\codeigniter4\framework\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 D:\WORKS\pro\news\vendor\codeigniter4\framework\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 D:\WORKS\pro\news\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2020-11-08 19:37:53 --> Invalid file: home_js.php
+#0 D:\WORKS\pro\news\vendor\codeigniter4\framework\system\View\View.php(228): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('home_js.php')
+#1 D:\WORKS\pro\news\vendor\codeigniter4\framework\system\Common.php(1119): CodeIgniter\View\View->render('home_js', Array, true)
+#2 D:\WORKS\pro\news\app\Views\layout.php(3501): view('home_js', Array)
+#3 D:\WORKS\pro\news\vendor\codeigniter4\framework\system\View\View.php(246): include('D:\\WORKS\\pro\\ne...')
+#4 D:\WORKS\pro\news\vendor\codeigniter4\framework\system\Common.php(1119): CodeIgniter\View\View->render('layout', Array, true)
+#5 D:\WORKS\pro\news\app\Controllers\Home.php(9): view('layout', Array)
+#6 D:\WORKS\pro\news\vendor\codeigniter4\framework\system\CodeIgniter.php(918): App\Controllers\Home->index()
+#7 D:\WORKS\pro\news\vendor\codeigniter4\framework\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 D:\WORKS\pro\news\vendor\codeigniter4\framework\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 D:\WORKS\pro\news\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2020-11-08 19:38:09 --> file_get_contents(): read of 8192 bytes failed with errno=13 Permission denied
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(8, 'file_get_conten...', 'D:\\WORKS\\pro\\ne...', 111, Array)
+#1 D:\WORKS\pro\news\vendor\codeigniter4\framework\system\Debug\Toolbar\Collectors\History.php(111): file_get_contents('D:\\WORKS\\pro\\ne...')
+#2 D:\WORKS\pro\news\vendor\codeigniter4\framework\system\Debug\Toolbar.php(483): CodeIgniter\Debug\Toolbar\Collectors\History->setFiles(1604885889, 20)
+#3 D:\WORKS\pro\news\vendor\codeigniter4\framework\system\Debug\Toolbar.php(455): CodeIgniter\Debug\Toolbar->format(Array, 'html')
+#4 D:\WORKS\pro\news\app\Config\Events.php(50): CodeIgniter\Debug\Toolbar->respond()
+#5 [internal function]: CodeIgniter\Events\Events::Config\{closure}()
+#6 D:\WORKS\pro\news\vendor\codeigniter4\framework\system\Events\Events.php(188): call_user_func(Object(Closure))
+#7 D:\WORKS\pro\news\vendor\codeigniter4\framework\system\CodeIgniter.php(293): CodeIgniter\Events\Events::trigger('pre_system')
+#8 D:\WORKS\pro\news\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2020-11-08 19:48:51 --> Invalid file: home_js.php
+#0 D:\WORKS\pro\news\vendor\codeigniter4\framework\system\View\View.php(228): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('home_js.php')
+#1 D:\WORKS\pro\news\vendor\codeigniter4\framework\system\Common.php(1119): CodeIgniter\View\View->render('home_js', Array, true)
+#2 D:\WORKS\pro\news\app\Views\layout.php(3501): view('home_js', Array)
+#3 D:\WORKS\pro\news\vendor\codeigniter4\framework\system\View\View.php(246): include('D:\\WORKS\\pro\\ne...')
+#4 D:\WORKS\pro\news\vendor\codeigniter4\framework\system\Common.php(1119): CodeIgniter\View\View->render('layout', Array, true)
+#5 D:\WORKS\pro\news\app\Controllers\Home.php(9): view('layout', Array)
+#6 D:\WORKS\pro\news\vendor\codeigniter4\framework\system\CodeIgniter.php(918): App\Controllers\Home->index()
+#7 D:\WORKS\pro\news\vendor\codeigniter4\framework\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 D:\WORKS\pro\news\vendor\codeigniter4\framework\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 D:\WORKS\pro\news\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2020-11-08 19:54:40 --> auth filter must have a matching alias defined.
+#0 D:\WORKS\pro\news\vendor\codeigniter4\framework\system\Filters\Filters.php(150): CodeIgniter\Filters\Exceptions\FilterException::forNoAlias('auth')
+#1 D:\WORKS\pro\news\vendor\codeigniter4\framework\system\CodeIgniter.php(382): CodeIgniter\Filters\Filters->run('signin', 'before')
+#2 D:\WORKS\pro\news\vendor\codeigniter4\framework\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 D:\WORKS\pro\news\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-11-08 19:59:01 --> auth filter must have a matching alias defined.
+#0 D:\WORKS\pro\news\vendor\codeigniter4\framework\system\Filters\Filters.php(150): CodeIgniter\Filters\Exceptions\FilterException::forNoAlias('auth')
+#1 D:\WORKS\pro\news\vendor\codeigniter4\framework\system\CodeIgniter.php(382): CodeIgniter\Filters\Filters->run('signin', 'before')
+#2 D:\WORKS\pro\news\vendor\codeigniter4\framework\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 D:\WORKS\pro\news\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-11-08 20:04:46 --> auth filter must have a matching alias defined.
+#0 D:\WORKS\pro\news\vendor\codeigniter4\framework\system\Filters\Filters.php(150): CodeIgniter\Filters\Exceptions\FilterException::forNoAlias('auth')
+#1 D:\WORKS\pro\news\vendor\codeigniter4\framework\system\CodeIgniter.php(382): CodeIgniter\Filters\Filters->run('users', 'before')
+#2 D:\WORKS\pro\news\vendor\codeigniter4\framework\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 D:\WORKS\pro\news\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-11-08 20:05:31 --> Class 'App\Filters\Signin' not found
+#0 D:\WORKS\pro\news\vendor\codeigniter4\framework\system\CodeIgniter.php(382): CodeIgniter\Filters\Filters->run('users', 'before')
+#1 D:\WORKS\pro\news\vendor\codeigniter4\framework\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#2 D:\WORKS\pro\news\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#3 {main}
+CRITICAL - 2020-11-08 20:17:26 --> auth filter must have a matching alias defined.
+#0 D:\WORKS\pro\news\vendor\codeigniter4\framework\system\Filters\Filters.php(150): CodeIgniter\Filters\Exceptions\FilterException::forNoAlias('auth')
+#1 D:\WORKS\pro\news\vendor\codeigniter4\framework\system\CodeIgniter.php(382): CodeIgniter\Filters\Filters->run('signin', 'before')
+#2 D:\WORKS\pro\news\vendor\codeigniter4\framework\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 D:\WORKS\pro\news\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-11-08 20:17:27 --> auth filter must have a matching alias defined.
+#0 D:\WORKS\pro\news\vendor\codeigniter4\framework\system\Filters\Filters.php(150): CodeIgniter\Filters\Exceptions\FilterException::forNoAlias('auth')
+#1 D:\WORKS\pro\news\vendor\codeigniter4\framework\system\CodeIgniter.php(382): CodeIgniter\Filters\Filters->run('signin', 'before')
+#2 D:\WORKS\pro\news\vendor\codeigniter4\framework\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 D:\WORKS\pro\news\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-11-08 20:17:27 --> auth filter must have a matching alias defined.
+#0 D:\WORKS\pro\news\vendor\codeigniter4\framework\system\Filters\Filters.php(150): CodeIgniter\Filters\Exceptions\FilterException::forNoAlias('auth')
+#1 D:\WORKS\pro\news\vendor\codeigniter4\framework\system\CodeIgniter.php(382): CodeIgniter\Filters\Filters->run('signin', 'before')
+#2 D:\WORKS\pro\news\vendor\codeigniter4\framework\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 D:\WORKS\pro\news\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-11-08 20:17:27 --> auth filter must have a matching alias defined.
+#0 D:\WORKS\pro\news\vendor\codeigniter4\framework\system\Filters\Filters.php(150): CodeIgniter\Filters\Exceptions\FilterException::forNoAlias('auth')
+#1 D:\WORKS\pro\news\vendor\codeigniter4\framework\system\CodeIgniter.php(382): CodeIgniter\Filters\Filters->run('signin', 'before')
+#2 D:\WORKS\pro\news\vendor\codeigniter4\framework\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 D:\WORKS\pro\news\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-11-08 20:17:29 --> auth filter must have a matching alias defined.
+#0 D:\WORKS\pro\news\vendor\codeigniter4\framework\system\Filters\Filters.php(150): CodeIgniter\Filters\Exceptions\FilterException::forNoAlias('auth')
+#1 D:\WORKS\pro\news\vendor\codeigniter4\framework\system\CodeIgniter.php(382): CodeIgniter\Filters\Filters->run('signin', 'before')
+#2 D:\WORKS\pro\news\vendor\codeigniter4\framework\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 D:\WORKS\pro\news\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-11-08 20:17:29 --> auth filter must have a matching alias defined.
+#0 D:\WORKS\pro\news\vendor\codeigniter4\framework\system\Filters\Filters.php(150): CodeIgniter\Filters\Exceptions\FilterException::forNoAlias('auth')
+#1 D:\WORKS\pro\news\vendor\codeigniter4\framework\system\CodeIgniter.php(382): CodeIgniter\Filters\Filters->run('signin', 'before')
+#2 D:\WORKS\pro\news\vendor\codeigniter4\framework\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 D:\WORKS\pro\news\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-11-08 20:17:30 --> auth filter must have a matching alias defined.
+#0 D:\WORKS\pro\news\vendor\codeigniter4\framework\system\Filters\Filters.php(150): CodeIgniter\Filters\Exceptions\FilterException::forNoAlias('auth')
+#1 D:\WORKS\pro\news\vendor\codeigniter4\framework\system\CodeIgniter.php(382): CodeIgniter\Filters\Filters->run('signin', 'before')
+#2 D:\WORKS\pro\news\vendor\codeigniter4\framework\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 D:\WORKS\pro\news\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-11-08 20:17:30 --> auth filter must have a matching alias defined.
+#0 D:\WORKS\pro\news\vendor\codeigniter4\framework\system\Filters\Filters.php(150): CodeIgniter\Filters\Exceptions\FilterException::forNoAlias('auth')
+#1 D:\WORKS\pro\news\vendor\codeigniter4\framework\system\CodeIgniter.php(382): CodeIgniter\Filters\Filters->run('signin', 'before')
+#2 D:\WORKS\pro\news\vendor\codeigniter4\framework\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 D:\WORKS\pro\news\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-11-08 20:17:31 --> auth filter must have a matching alias defined.
+#0 D:\WORKS\pro\news\vendor\codeigniter4\framework\system\Filters\Filters.php(150): CodeIgniter\Filters\Exceptions\FilterException::forNoAlias('auth')
+#1 D:\WORKS\pro\news\vendor\codeigniter4\framework\system\CodeIgniter.php(382): CodeIgniter\Filters\Filters->run('signin', 'before')
+#2 D:\WORKS\pro\news\vendor\codeigniter4\framework\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 D:\WORKS\pro\news\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-11-08 20:17:41 --> auth22 filter must have a matching alias defined.
+#0 D:\WORKS\pro\news\vendor\codeigniter4\framework\system\Filters\Filters.php(150): CodeIgniter\Filters\Exceptions\FilterException::forNoAlias('auth22')
+#1 D:\WORKS\pro\news\vendor\codeigniter4\framework\system\CodeIgniter.php(382): CodeIgniter\Filters\Filters->run('signin', 'before')
+#2 D:\WORKS\pro\news\vendor\codeigniter4\framework\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 D:\WORKS\pro\news\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-11-08 20:17:42 --> auth22 filter must have a matching alias defined.
+#0 D:\WORKS\pro\news\vendor\codeigniter4\framework\system\Filters\Filters.php(150): CodeIgniter\Filters\Exceptions\FilterException::forNoAlias('auth22')
+#1 D:\WORKS\pro\news\vendor\codeigniter4\framework\system\CodeIgniter.php(382): CodeIgniter\Filters\Filters->run('signin', 'before')
+#2 D:\WORKS\pro\news\vendor\codeigniter4\framework\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 D:\WORKS\pro\news\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-11-08 20:17:42 --> auth22 filter must have a matching alias defined.
+#0 D:\WORKS\pro\news\vendor\codeigniter4\framework\system\Filters\Filters.php(150): CodeIgniter\Filters\Exceptions\FilterException::forNoAlias('auth22')
+#1 D:\WORKS\pro\news\vendor\codeigniter4\framework\system\CodeIgniter.php(382): CodeIgniter\Filters\Filters->run('signin', 'before')
+#2 D:\WORKS\pro\news\vendor\codeigniter4\framework\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 D:\WORKS\pro\news\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-11-08 20:17:45 --> auth filter must have a matching alias defined.
+#0 D:\WORKS\pro\news\vendor\codeigniter4\framework\system\Filters\Filters.php(150): CodeIgniter\Filters\Exceptions\FilterException::forNoAlias('auth')
+#1 D:\WORKS\pro\news\vendor\codeigniter4\framework\system\CodeIgniter.php(382): CodeIgniter\Filters\Filters->run('signin', 'before')
+#2 D:\WORKS\pro\news\vendor\codeigniter4\framework\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 D:\WORKS\pro\news\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-11-08 21:24:08 --> auth filter must have a matching alias defined.
+#0 D:\WORKS\pro\news\vendor\codeigniter4\framework\system\Filters\Filters.php(150): CodeIgniter\Filters\Exceptions\FilterException::forNoAlias('auth')
+#1 D:\WORKS\pro\news\vendor\codeigniter4\framework\system\CodeIgniter.php(382): CodeIgniter\Filters\Filters->run('/', 'before')
+#2 D:\WORKS\pro\news\vendor\codeigniter4\framework\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 D:\WORKS\pro\news\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-11-08 21:27:58 --> auth filter must have a matching alias defined.
+#0 D:\WORKS\pro\news\vendor\codeigniter4\framework\system\Filters\Filters.php(150): CodeIgniter\Filters\Exceptions\FilterException::forNoAlias('auth')
+#1 D:\WORKS\pro\news\vendor\codeigniter4\framework\system\CodeIgniter.php(382): CodeIgniter\Filters\Filters->run('signin222', 'before')
+#2 D:\WORKS\pro\news\vendor\codeigniter4\framework\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 D:\WORKS\pro\news\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-11-08 21:52:43 --> syntax error, unexpected ';', expecting ']'
+#0 D:\WORKS\pro\news\vendor\codeigniter4\framework\system\Autoloader\Autoloader.php(296): CodeIgniter\Autoloader\Autoloader->requireFile('D:\\WORKS\\pro\\ne...')
+#1 D:\WORKS\pro\news\vendor\codeigniter4\framework\system\Autoloader\Autoloader.php(258): CodeIgniter\Autoloader\Autoloader->loadInNamespace('Config\\Filters')
+#2 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('Config\\Filters')
+#3 D:\WORKS\pro\news\vendor\codeigniter4\framework\system\Config\Services.php(322): spl_autoload_call('Config\\Filters')
+#4 D:\WORKS\pro\news\vendor\codeigniter4\framework\system\Config\BaseService.php(123): CodeIgniter\Config\Services::filters(NULL, false)
+#5 D:\WORKS\pro\news\vendor\codeigniter4\framework\system\Config\Services.php(317): CodeIgniter\Config\BaseService::getSharedInstance('filters', NULL)
+#6 D:\WORKS\pro\news\vendor\codeigniter4\framework\system\CodeIgniter.php(367): CodeIgniter\Config\Services::filters()
+#7 D:\WORKS\pro\news\vendor\codeigniter4\framework\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 D:\WORKS\pro\news\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#9 {main}

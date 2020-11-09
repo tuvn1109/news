@@ -21,7 +21,7 @@
             autoColumns: true,
 
         },
-        rows:{
+        rows: {
             autoHide: false,
         },
         layout: {
@@ -45,8 +45,8 @@
             }
         },
         search: {
-            onEnter: true,
-            input: $('#generalSearch'),
+            onEnter: false,
+            input: $('#kt_datatable_search_query'),
         },
         toolbar: {
             layout: ['pagination', 'info'],
@@ -64,4 +64,23 @@
         }
     }
     var datatable = $('#kt_datatable').KTDatatable(options);
+
+    function deleteuser(id) {
+        Swal.fire({
+            title: "Are you sure?",
+            text: "You won t be able to revert this!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonText: "Yes, delete it!"
+        }).then(function (result) {
+            if (result.value) {
+                Swal.fire(
+                    "Deleted!",
+                    "Your file has been deleted.",
+                    "success"
+                )
+            }
+        });
+
+    }
 </script>

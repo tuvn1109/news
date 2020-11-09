@@ -17,7 +17,15 @@ class UsersModel extends Model
 	protected $validationRules = [];
 	protected $validationMessages = [];
 	protected $skipValidation = false;
-	protected $selectFields = ['users.id', 'username', 'password'];
+	protected $selectFields = ['*'];
+
+
+	public function getlist($search = 0)
+	{
+		$query = $this->select($this->selectFields)
+			->where('username', 'tunv');
+		return $query->get()->getRowArray();
+	}
 
 	public function getUserByUsername($username, $password)
 	{
@@ -30,7 +38,7 @@ class UsersModel extends Model
 	public function getUserByName($username)
 	{
 		$query = $this->select($this->selectFields);
-		return $query->getWhere(['username'=>$username])->getRowArray();
+		return $query->getWhere(['username' => $username])->getRowArray();
 	}
 }
 

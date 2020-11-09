@@ -1,0 +1,22 @@
+CRITICAL - 2020-11-03 21:32:41 --> Argument 2 passed to view() must be of the type array, null given, called in D:\WORKS\Test\news\app\Views\layout.php on line 5408
+#0 D:\WORKS\Test\news\app\Views\layout.php(5408): view('home', NULL)
+#1 D:\WORKS\Test\news\vendor\codeigniter4\framework\system\View\View.php(246): include('D:\\WORKS\\Test\\n...')
+#2 D:\WORKS\Test\news\vendor\codeigniter4\framework\system\Common.php(1119): CodeIgniter\View\View->render('layout', Array, true)
+#3 D:\WORKS\Test\news\app\Controllers\Home.php(8): view('layout', Array)
+#4 D:\WORKS\Test\news\vendor\codeigniter4\framework\system\CodeIgniter.php(918): App\Controllers\Home->index()
+#5 D:\WORKS\Test\news\vendor\codeigniter4\framework\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#6 D:\WORKS\Test\news\vendor\codeigniter4\framework\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 D:\WORKS\Test\news\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2020-11-03 21:40:48 --> Invalid file: user.php
+#0 D:\WORKS\Test\news\vendor\codeigniter4\framework\system\View\View.php(228): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('user.php')
+#1 D:\WORKS\Test\news\vendor\codeigniter4\framework\system\Common.php(1119): CodeIgniter\View\View->render('user', Array, true)
+#2 D:\WORKS\Test\news\app\Views\layout.php(3208): view('user', Array)
+#3 D:\WORKS\Test\news\vendor\codeigniter4\framework\system\View\View.php(246): include('D:\\WORKS\\Test\\n...')
+#4 D:\WORKS\Test\news\vendor\codeigniter4\framework\system\Common.php(1119): CodeIgniter\View\View->render('layout', Array, true)
+#5 D:\WORKS\Test\news\app\Controllers\Users.php(8): view('layout', Array)
+#6 D:\WORKS\Test\news\vendor\codeigniter4\framework\system\CodeIgniter.php(918): App\Controllers\Users->index()
+#7 D:\WORKS\Test\news\vendor\codeigniter4\framework\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Users))
+#8 D:\WORKS\Test\news\vendor\codeigniter4\framework\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 D:\WORKS\Test\news\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#10 {main}
