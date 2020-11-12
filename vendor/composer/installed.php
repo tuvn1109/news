@@ -1,24 +1,24 @@
 <?php return array (
   'root' => 
   array (
-    'pretty_version' => 'v4.0.4',
-    'version' => '4.0.4.0',
+    'pretty_version' => 'dev-main',
+    'version' => 'dev-main',
     'aliases' => 
     array (
     ),
-    'reference' => NULL,
+    'reference' => '0ea8c087bba13fe3685fe592072da6d1de60e06c',
     'name' => 'codeigniter4/appstarter',
   ),
   'versions' => 
   array (
     'codeigniter4/appstarter' => 
     array (
-      'pretty_version' => 'v4.0.4',
-      'version' => '4.0.4.0',
+      'pretty_version' => 'dev-main',
+      'version' => 'dev-main',
       'aliases' => 
       array (
       ),
-      'reference' => NULL,
+      'reference' => '0ea8c087bba13fe3685fe592072da6d1de60e06c',
     ),
     'codeigniter4/framework' => 
     array (
@@ -38,6 +38,15 @@
       ),
       'reference' => 'f350df0268e904597e3bd9c4685c53e0e333feea',
     ),
+    'firebase/php-jwt' => 
+    array (
+      'pretty_version' => 'v5.2.0',
+      'version' => '5.2.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'feb0e820b8436873675fd3aca04f3728eb2185cb',
+    ),
     'fzaninotto/faker' => 
     array (
       'pretty_version' => 'dev-master',
@@ -47,6 +56,60 @@
         0 => '1.9.x-dev',
       ),
       'reference' => 'ac73e5287024f5e98dd6d0bf10e6a6f7877b7513',
+    ),
+    'google/apiclient' => 
+    array (
+      'pretty_version' => 'v2.8.2',
+      'version' => '2.8.2.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '24f3ec0c79567a08c31f8271b61d79b050b25b0a',
+    ),
+    'google/apiclient-services' => 
+    array (
+      'pretty_version' => 'v0.153',
+      'version' => '0.153.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'db62bb19f32f81c9551f223c72be0682eb58ebd8',
+    ),
+    'google/auth' => 
+    array (
+      'pretty_version' => 'v1.14.3',
+      'version' => '1.14.3.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'c1503299c779af0cbc99b43788f75930988852cf',
+    ),
+    'guzzlehttp/guzzle' => 
+    array (
+      'pretty_version' => '7.2.0',
+      'version' => '7.2.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '0aa74dfb41ae110835923ef10a9d803a22d50e79',
+    ),
+    'guzzlehttp/promises' => 
+    array (
+      'pretty_version' => '1.4.0',
+      'version' => '1.4.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '60d379c243457e073cff02bc323a2a86cb355631',
+    ),
+    'guzzlehttp/psr7' => 
+    array (
+      'pretty_version' => '1.7.0',
+      'version' => '1.7.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '53330f47520498c0ae1f61f7e2c90f55690c06a3',
     ),
     'kint-php/kint' => 
     array (
@@ -83,6 +146,15 @@
       array (
       ),
       'reference' => '231c73783ebb7dd9ec77916c10037eff5a2b6efe',
+    ),
+    'monolog/monolog' => 
+    array (
+      'pretty_version' => '2.1.1',
+      'version' => '2.1.1.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'f9eee5cec93dfb313a38b6b288741e84e53f02d5',
     ),
     'myclabs/deep-copy' => 
     array (
@@ -141,6 +213,15 @@
       array (
       ),
       'reference' => '6a467b8989322d92aa1c8bf2bebcc6e5c2ba55c0',
+    ),
+    'phpseclib/phpseclib' => 
+    array (
+      'pretty_version' => '2.0.29',
+      'version' => '2.0.29.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '497856a8d997f640b4a516062f84228a772a48a8',
     ),
     'phpspec/prophecy' => 
     array (
@@ -205,6 +286,47 @@
       ),
       'reference' => '34c18baa6a44f1d1fbf0338907139e9dce95b997',
     ),
+    'psr/cache' => 
+    array (
+      'pretty_version' => '1.0.1',
+      'version' => '1.0.1.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'd11b50ad223250cf17b86e38383413f5a6764bf8',
+    ),
+    'psr/http-client' => 
+    array (
+      'pretty_version' => '1.0.1',
+      'version' => '1.0.1.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '2dfb5f6c5eff0e91e20e913f8c5452ed95b86621',
+    ),
+    'psr/http-client-implementation' => 
+    array (
+      'provided' => 
+      array (
+        0 => '1.0',
+      ),
+    ),
+    'psr/http-message' => 
+    array (
+      'pretty_version' => '1.0.1',
+      'version' => '1.0.1.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'f6561bf28d520154e4b0ec72be95418abe6d9363',
+    ),
+    'psr/http-message-implementation' => 
+    array (
+      'provided' => 
+      array (
+        0 => '1.0',
+      ),
+    ),
     'psr/log' => 
     array (
       'pretty_version' => '1.1.3',
@@ -213,6 +335,22 @@
       array (
       ),
       'reference' => '0f73288fd15629204f9d42b7055f72dacbe811fc',
+    ),
+    'psr/log-implementation' => 
+    array (
+      'provided' => 
+      array (
+        0 => '1.0.0',
+      ),
+    ),
+    'ralouphie/getallheaders' => 
+    array (
+      'pretty_version' => '3.0.3',
+      'version' => '3.0.3.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '120b605dfeb996808c31b6477290a714d356e822',
     ),
     'sebastian/code-unit-reverse-lookup' => 
     array (
